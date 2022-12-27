@@ -1,6 +1,7 @@
 #ifndef UNIQUE_PTR_H
 #define UNIQUE_PTR_H
 #include <memory>
+#include <functional>
 
 template <typename T, typename Deleter = std::default_delete<T>>
 class unique_ptr {
@@ -21,9 +22,7 @@ public:
     operator bool();
 
 public:
-    T* get() const;
-    Deleter& get_deleter();  
-    const Deleter& get_deleter() const;  
+    T* get() const; 
     T* release();
     void reset();
     void swap(unique_ptr&);

@@ -53,16 +53,6 @@ T* unique_ptr<T, Deleter>::get() const {
 }
 
 template <typename T, typename Deleter>
-Deleter& unique_ptr<T, Deleter>::get_deleter() {
-    return Deleter::type;
-}
-
-template <typename T, typename Deleter>
-const Deleter& unique_ptr<T, Deleter>::get_deleter() const {
-    return Deleter::type;
-}
-
-template <typename T, typename Deleter>
 T* unique_ptr<T, Deleter>::release() {
     return this->m_ptr;
 }
